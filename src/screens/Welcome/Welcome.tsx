@@ -1,7 +1,7 @@
 import { useNavigation } from "@react-navigation/native";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { themeColors } from "../../theme";
+import { themeColors } from "../../../theme";
 
 export default function Welcome() {
   const navigation = useNavigation();
@@ -25,7 +25,7 @@ export default function Welcome() {
         </Text>
         <View className="flex-row justify-center">
           <Image
-            source={require("../../assets/images/welcome.png")}
+            source={require("../../../assets/images/welcome.png")}
             style={{ width: 350, height: 350 }}
           />
         </View>
@@ -38,7 +38,7 @@ export default function Welcome() {
               Sign Up
             </Text>
           </TouchableOpacity>
-          <View className="flex-row justify-center">
+          <View className="flex flex-row justify-center">
             <Text className="text-white font-semibold">
               Already have an account?
             </Text>

@@ -3,13 +3,13 @@ import React from "react";
 import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { ArrowLeftIcon } from "react-native-heroicons/solid";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { themeColors } from "../../theme";
+import { themeColors } from "../../../theme";
 
-export default function SignUp() {
+export default function Login() {
   const navigation = useNavigation();
 
-  function onPressLogin() {
-    navigation.navigate("Login");
+  function onPressSignUp() {
+    navigation.navigate("SignUp");
   }
   function onPressBack() {
     navigation.goBack();
@@ -20,7 +20,7 @@ export default function SignUp() {
       className="flex-1 bg-white"
       style={{ backgroundColor: themeColors.bg }}
     >
-      <SafeAreaView className="flex">
+      <SafeAreaView className="flex ">
         <View className="flex-row justify-start">
           <TouchableOpacity
             onPress={onPressBack}
@@ -31,38 +31,35 @@ export default function SignUp() {
         </View>
         <View className="flex-row justify-center">
           <Image
-            source={require("../../assets/images/signup.png")}
-            style={{ width: 165, height: 110 }}
+            source={require("../../../assets/images/login.png")}
+            style={{ width: 200, height: 200 }}
           />
         </View>
       </SafeAreaView>
       <View
-        className="flex-1 bg-white px-8 pt-8"
         style={{ borderTopLeftRadius: 50, borderTopRightRadius: 50 }}
+        className="flex-1 bg-white px-8 pt-8"
       >
         <View className="form space-y-2">
-          <Text className="text-gray-700 ml-4">Full Name</Text>
-          <TextInput
-            className="p-4 bg-gray-100 text-gray-700 rounded-2xl mb-3"
-            value="john snow"
-            placeholder="Enter Name"
-          />
           <Text className="text-gray-700 ml-4">Email Address</Text>
           <TextInput
             className="p-4 bg-gray-100 text-gray-700 rounded-2xl mb-3"
+            placeholder="email"
             value="john@gmail.com"
-            placeholder="Enter Email"
           />
           <Text className="text-gray-700 ml-4">Password</Text>
           <TextInput
-            className="p-4 bg-gray-100 text-gray-700 rounded-2xl mb-7"
+            className="p-4 bg-gray-100 text-gray-700 rounded-2xl"
             secureTextEntry
+            placeholder="password"
             value="test12345"
-            placeholder="Enter Password"
           />
+          <TouchableOpacity className="flex items-end">
+            <Text className="text-gray-700 mb-5">Forgot Password?</Text>
+          </TouchableOpacity>
           <TouchableOpacity className="py-3 bg-yellow-400 rounded-xl">
-            <Text className="font-xl font-bold text-center text-gray-700">
-              Sign Up
+            <Text className="text-xl font-bold text-center text-gray-700">
+              Login
             </Text>
           </TouchableOpacity>
         </View>
@@ -72,29 +69,29 @@ export default function SignUp() {
         <View className="flex-row justify-center space-x-12">
           <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
             <Image
-              source={require("../../assets/icons/google.png")}
+              source={require("../../../assets/icons/google.png")}
               className="w-10 h-10"
             />
           </TouchableOpacity>
           <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
             <Image
-              source={require("../../assets/icons/apple.png")}
+              source={require("../../../assets/icons/apple.png")}
               className="w-10 h-10"
             />
           </TouchableOpacity>
           <TouchableOpacity className="p-2 bg-gray-100 rounded-2xl">
             <Image
-              source={require("../../assets/icons/facebook.png")}
+              source={require("../../../assets/icons/facebook.png")}
               className="w-10 h-10"
             />
           </TouchableOpacity>
         </View>
         <View className="flex-row justify-center mt-7">
           <Text className="text-gray-500 font-semibold">
-            Already have an account?
+            Don't have an account?
           </Text>
-          <TouchableOpacity onPress={onPressLogin}>
-            <Text className="font-semibold text-yellow-500"> Login</Text>
+          <TouchableOpacity onPress={onPressSignUp}>
+            <Text className="font-semibold text-yellow-500"> Sign Up</Text>
           </TouchableOpacity>
         </View>
       </View>
